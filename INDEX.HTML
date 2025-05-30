@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - RAINALD AVISH CHAND's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Picture2.jpg" alt="Your Name's Logo" class="site-logo">
+                </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <div class="profile-pic-container">
+                    <img src="PICTURE3.jpg" alt="Your Profile Picture" class="profile-pic">
+                </div>
+                <h1>Welcome, I'm RAINALD AVISH CHAND!</h1>
+                <p class="bio">Aspiring web developer passionate about creating engaging and user-friendly digital experiences. Always eager to learn new technologies and solve challenging problems.</p>
+            </div>
+        </section>
+
+        </main>
+
+    <footer>
+        <p>© 2025 RAINALD AVISH CHAND. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTopBtn" title="Go to top">Top</button>
+
+    <script>
+        // Basic JavaScript for Back to Top Button
+        const backToTopButton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        backToTopButton.addEventListener("click", () => {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    </script>
+</body>
+</html>

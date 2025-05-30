@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - RAINALD AVISH CHAND's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Picture2.jpg" alt="Your Name's Logo" class="site-logo">
+                </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-intro" class="container">
+            <h2>About Me</h2>
+            <p>Throughout my secondary school career, I demonstrated strong academic performance, consistently ranking 1st in my class and ultimately graduating with the highest overall academic standing across all subjects. My core interests lie in technology and its application to being helpful. I am consistently engaged by the challenge of problem-solving, the process of learning new things, and the freedom for creativity that these areas offer. I've also honed my critical thinking, discipline, and research abilities through these pursuits. My clear academic path involves studying PDH, Commerce, and Computer Science, where I aim to leverage these interests to make a meaningful contribution.</p>
+            </section>
+
+        <section id="education-timeline" class="container">
+            <h2>Education Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 to 2025</div>
+                    <div class="timeline-content">
+                        <h3>AHAMDIYYA MUSLIM COLLEGE</h3>
+                        <p>1ST PLACE IN YEAR 11, 12</p>
+                        <ul>
+                            <li>SUBJECT HIGHEST IN TECHNICAL DRAWING, ECONOMICS, COMPUTER STUDIES, ENGLISH, MATHEMATICES</li>
+                            <li>OVERROLL HIGHEST IN YEAR 11,12</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>AHAMDIYYA MUSLIM COLLEGE</h3>
+                        <p>ENGLISH, TECHNICAL DRAWING, MATHEMATICES, COMPUTER STUDIES, ECONOMICS/p>
+                        <ul>
+                            <li>1ST PLACE IN YEAR 13 AT1</li>
+                            <li>OVERROLL HIGHEST IN ASSESSEMENT TEST ONE 2025</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <section id="skills" class="container">
+            <h2>Skills</h2>
+            <div class="skills-category">
+                <h3>Technical Skills</h3>
+                <div class="skill-item">
+                    <span>HTML/CSS</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar htmlcss" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>JavaScript</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar javascript" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Python</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar python" style="width: 60%;"></div>
+                    </div>
+                </div>
+                </div>
+
+            <div class="skills-category">
+                <h3>Creative Skills</h3>
+                <div class="skill-item">
+                    <span>Graphic Design</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar graphic-design" style="width: 80%;"></div>
+                    </div>
+                </div>
+                </div>
+
+            <div class="skills-category">
+                <h3>Soft Skills</h3>
+                <div class="skill-item">
+                    <span class="skill-badge">Teamwork</span>
+                    <span class="skill-badge">Problem Solving</span>
+                    <span class="skill-badge">Communication</span>
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 RAINALD AVISH CHAND. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTopBtn" title="Go to top">Top</button>
+
+    <script>
+        // Basic JavaScript for Back to Top Button
+        const backToTopButton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        backToTopButton.addEventListener("click", () => {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,683 @@
+/* style.css */
+/* --- CSS Variables for Colors and Fonts --- */
+:root {
+/* Color Palette (Feel free to customize these!) */
+--primary-color: #3498db; /* A vibrant blue for main accents */
+--secondary-color: #2ecc71; /* A pleasant green for secondary
+elements/success */
+--accent-color: #e74c3c; /* A bold red for hover
+effects/attention */
+--dark-text-color: #333; /* Dark grey for primary text */
+--light-text-color: #f4f4f4; /* Off-white for text on dark
+backgrounds */
+--background-color: #f4f4f4; /* Light grey for general background
+*/
+--card-background: #ffffff; /* Pure white for content cards */
+--border-color: #ddd; /* Light grey for borders and lines
+*/
+/* Font Families (Imported from Google Fonts in HTML <head>) */
+--heading-font: 'Montserrat', sans-serif; /* A bold, modern font
+for headings */
+--body-font: 'Roboto', sans-serif; /* A clean, readable font
+for body text */
+}
+/* --- Basic Reset & Body Styling --- */
+/* A universal reset to remove default browser margins and paddings */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box; /* Ensures padding and border are included
+in element's total width and height */
+}
+body {
+font-family: var(--body-font); /* Apply global body font */
+line-height: 1.6; /* Improve readability of text */
+color: var(--dark-text-color); /* Apply primary text color */
+background-color: var(--background-color); /* Apply general
+background color */
+padding-top: 60px; /* Space for fixed header to prevent content
+from going underneath */
+transition: padding-top 0.3s ease; /* Smooth transition for header
+height changes on responsive */
+}
+/* Centralizing content within a maximum width */
+.container {
+max-width: 1200px; /* Max width for content */
+margin: 0 auto; /* Center the container horizontally */
+padding: 20px; /* Internal padding for content */
+}
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--heading-font); /* Apply heading font */
+color: var(--primary-color); /* Apply primary color to headings */
+margin-bottom: 15px; /* Space below headings */
+}
+/* --- Header & Navigation Bar --- */
+header {
+background-color: var(--dark-text-color); /* Dark background for
+header */
+color: var(--light-text-color); /* Light text color for header
+content */
+padding: 1rem 20px; /* Vertical and horizontal padding */
+position: fixed; /* Keep header at the top when scrolling */
+width: 100%; /* Full width */
+top: 0;
+left: 0;
+z-index: 1000; /* Ensure header is above other content */
+box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth
+*/
+display: flex; /* Use Flexbox for layout of logo and nav */
+justify-content: space-between; /* Puts space between logo and nav
+*/
+align-items: center; /* Vertically centers logo and nav items */
+flex-wrap: wrap; /* Allows items to wrap onto the next line on
+smaller screens */
+}
+/* Logo Styling */
+.logo {
+margin-right: 20px; /* Space between logo and navigation */
+flex-shrink: 0; /* Prevents the logo from shrinking on smaller
+screens */
+}
+.logo a {
+text-decoration: none; /* Remove underline from logo link */
+color: var(--light-text-color); /* Color for text logo or link
+around image */
+font-family: var(--heading-font); /* Apply heading font to text
+logo */
+font-size: 1.5em; /* Default size for text logo */
+font-weight: bold;
+}
+.site-logo {
+height: 40px; /* Set a fixed height for your logo image */
+width: auto; /* Maintain aspect ratio */
+vertical-align: middle; /* Helps align with text if used alongside
+*/
+}
+nav {
+flex-grow: 1; /* Allows navigation to take up remaining horizontal
+space */
+text-align: right; /* Aligns navigation links to the right */
+}
+nav ul {
+list-style: none; /* Remove bullet points from list */
+padding: 0;
+margin: 0;
+display: flex; /* Use Flexbox for navigation items */
+justify-content: flex-end; /* Align navigation items to the right
+within the nav container */
+flex-wrap: wrap; /* Allow nav items to wrap if screen is too
+narrow */
+}
+nav ul li {
+margin-left: 20px; /* Horizontal space between individual
+navigation items */
+}
+nav ul li a {
+color: var(--light-text-color); /* Text color for nav links */
+text-decoration: none; /* Remove underline */
+font-weight: bold;
+padding: 5px 10px; /* Padding around text for clickable area */
+transition: color 0.3s ease, background-color 0.3s ease; /* Smooth
+hover effects */
+display: block; /* Make the whole padding area clickable */
+}
+nav ul li a:hover,
+nav ul li a.active {
+color: var(--primary-color); /* Change text color on hover/active
+*/
+background-color: rgba(255, 255, 255, 0.1); /* Subtle background
+on hover/active */
+border-radius: 4px; /* Slightly rounded corners */
+}
+/* --- Hero Section (index.html) --- */
+#hero {
+/* Background image with a dark overlay for text readability */
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0,
+0.5)), url(background.jpg.jpg) no-repeat center
+center/cover;
+
+color: var(--light-text-color); /* Light text color for content on
+this dark background */
+text-align: center;
+padding: 100px 20px;
+display: flex;
+flex-direction: column; /* Stack content vertically within hero */
+justify-content: center; /* Center content vertically */
+align-items: center; /* Center content horizontally */
+min-height: calc(100vh - 60px); /* Ensure hero section takes at
+least the remaining viewport height */
+}
+.hero-content {
+max-width: 800px; /* Limit width of hero text for readability */
+}
+.profile-pic-container {
+margin-bottom: 20px; /* Space below the profile picture */
+}
+.profile-pic {
+border-radius: 50%; /* Make the image circular */
+width: 150px;
+height: 150px;
+object-fit: cover; /* Ensures image covers the area without
+distortion */
+border: 5px solid var(--primary-color); /* A border around the
+picture */
+box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Soft shadow for depth */
+}
+#hero h1 {
+font-size: 3em;
+margin-bottom: 15px;
+color: var(--light-text-color); /* Ensures heading is visible on
+dark background */
+}
+#hero .bio {
+font-size: 1.2em;
+max-width: 600px;
+margin: 0 auto; /* Center the bio text */
+}
+/* --- Section Base Styling (for About, Projects, Contact pages) ---
+*/
+section.container {
+padding: 40px; /* Generous internal padding for sections */
+background-color: var(--card-background); /* White background for
+content sections */
+margin-top: 20px; /* Spacing between sections */
+border-radius: 8px; /* Slightly rounded corners for a modern look
+*/
+box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow for
+floating effect */
+}
+/* --- About Me Page Styling --- */
+/* Education Timeline */
+.timeline {
+position: relative;
+padding: 20px 0;
+margin-left: 20px; /* Indent the timeline to make space for the
+vertical line */
+}
+.timeline::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 2px;
+background-color: var(--border-color); /* Vertical line color */
+height: 100%;
+}
+.timeline-item {
+position: relative;
+margin-bottom: 30px; /* Space between timeline entries */
+padding-left: 30px; /* Space for the timeline dot */
+}
+.timeline-item::before {
+content: '';
+position: absolute;
+width: 12px;
+height: 12px;
+background-color: var(--primary-color); /* Dot color */
+border-radius: 50%; /* Make it a circle */
+left: -5px; /* Position the dot over the vertical line */
+top: 5px;
+border: 2px solid var(--card-background); /* White border around
+dot */
+}
+.timeline-date {
+font-weight: bold;
+color: var(--primary-color);
+margin-bottom: 5px;
+font-size: 0.9em;
+}
+.timeline-content h3 {
+margin-top: 0;
+font-size: 1.3em;
+color: var(--dark-text-color); /* Better contrast for headings
+within timeline */
+}
+.timeline-content p {
+margin-bottom: 5px;
+}
+.timeline-content ul {
+list-style: disc; /* Default disc bullet points */
+margin-left: 20px; /* Indent list items */
+margin-top: 5px;
+font-size: 0.95em;
+}
+/* Skills Section */
+.skills-category {
+margin-bottom: 30px; /* Space between skill categories */
+}
+.skills-category h3 {
+color: var(--secondary-color);
+margin-bottom: 15px;
+border-bottom: 1px solid var(--border-color); /* Separator line */
+padding-bottom: 5px;
+}
+.skill-item {
+display: flex; /* Use flexbox for skill name and progress bar */
+align-items: center; /* Vertically align items */
+margin-bottom: 15px; /* More space between skill items */
+}
+.skill-item span {
+min-width: 120px; /* Ensures skill name has enough space */
+font-weight: bold;
+}
+/* Progress Bars */
+.progress-bar-container {
+flex-grow: 1; /* Allows container to fill remaining space */
+background-color: var(--border-color); /* Background for the track
+*/
+border-radius: 5px;
+height: 12px; /* Slightly taller for visibility */
+overflow: hidden; /* Ensures inner bar stays within rounded
+corners */
+margin-left: 15px;
+}
+.progress-bar {
+height: 100%;
+background-color: var(--primary-color); /* Main color for the bar
+*/
+border-radius: 5px;
+transition: width 0.8s ease-in-out; /* Smooth animation when width
+changes */
+}
+/* Example specific progress bar colors (optional - uncomment and
+adjust as needed) */
+/*
+.progress-bar.htmlcss { background-color: #e34c26; }
+.progress-bar.javascript { background-color: #f0db4f; }
+.progress-bar.python { background-color: #306998; }
+.progress-bar.graphic-design { background-color: #00bcd4; }
+*/
+/* Skill Badges (for soft skills) */
+.skill-badge {
+display: inline-block;
+background-color: var(--secondary-color);
+color: var(--light-text-color);
+padding: 7px 12px; /* More padding for a nicer badge */
+border-radius: 20px; /* Pill shape */
+margin-right: 10px;
+margin-bottom: 10px; /* For wrapping badges */
+font-size: 0.9em;
+white-space: nowrap; /* Prevent text from breaking within the
+badge */
+}
+/* --- Projects Page Styling --- */
+.project-grid {
+display: grid;
+/* Responsive grid: columns will automatically adjust, min 300px
+wide */
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px; /* Space between project cards */
+}
+.project-card {
+background-color: var(--background-color); /* Light background for
+card content */
+border: 1px solid var(--border-color);
+border-radius: 8px;
+overflow: hidden; /* Ensures content stays within rounded corners
+*/
+box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+transition: transform 0.3s ease-in-out, box-shadow 0.3s
+ease-in-out; /* Smooth hover effects */
+display: flex;
+flex-direction: column; /* Stack content vertically within card */
+}
+.project-card:hover {
+transform: translateY(-5px); /* Lift card slightly on hover */
+box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* More prominent shadow
+on hover */
+}
+.project-card h3 {
+color: var(--dark-text-color);
+padding: 15px;
+margin-bottom: 0;
+background-color: #f8f8f8; /* Slightly different background for
+title area */
+border-bottom: 1px solid var(--border-color);
+}
+.project-image-placeholder {
+width: 100%;
+height: 200px; /* Fixed height for consistent card appearance */
+background-color: #eee;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden; /* Ensures images fit */
+}
+.project-image-placeholder img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Covers the area, cropping if necessary */
+}
+.project-description {
+padding: 15px;
+font-size: 0.95em;
+flex-grow: 1; /* Allows description to take up available space,
+pushing footer down */
+margin-top: 10px; /* Space from title/image */
+}
+.tools-used {
+list-style: none;
+padding: 0 15px 15px; /* Adjust padding for tools list */
+display: flex;
+flex-wrap: wrap; /* Allow tools to wrap to next line */
+gap: 8px; /* Space between tool tags */
+}
+.tools-used li {
+background-color: var(--primary-color);
+color: var(--light-text-color);
+padding: 5px 10px; /* Padding for each tool tag */
+border-radius: 4px;
+font-size: 0.8em;
+white-space: nowrap; /* Prevent text breaking */
+}
+.project-link {
+display: block; /* Make button full width of card content area */
+margin: 15px; /* Margin around the button */
+text-align: center;
+}
+/* --- Contact Page Styling --- */
+.contact-content {
+display: flex;
+flex-wrap: wrap;
+gap: 40px; /* Space between form and info sections */
+justify-content: center; /* Center the two columns */
+align-items: flex-start; /* Align items to the top (in case one is
+taller) */
+}
+.contact-form-container,
+.contact-info {
+flex: 1; /* Allow columns to grow and shrink */
+min-width: 300px; /* Minimum width before wrapping */
+padding: 20px;
+border: 1px solid var(--border-color);
+border-radius: 8px;
+background-color: var(--background-color);
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Subtle inner
+shadow */
+}
+.contact-form-container h3,
+.contact-info h3 {
+color: var(--secondary-color);
+margin-bottom: 20px;
+}
+.contact-form .form-group {
+margin-bottom: 15px; /* Space between form fields */
+}
+.contact-form label {
+display: block; /* Make label appear on its own line */
+margin-bottom: 8px; /* Space below label */
+font-weight: bold;
+color: var(--dark-text-color);
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+width: 100%; /* Full width fields */
+padding: 12px; /* Generous padding inside fields */
+border: 1px solid var(--border-color);
+border-radius: 5px; /* Slightly more rounded corners */
+font-family: var(--body-font); /* Inherit font from body */
+font-size: 1em;
+box-shadow: inset 0 1px 2px rgba(0,0,0,0.07); /* Inner shadow for
+input fields */
+transition: border-color 0.3s ease, box-shadow 0.3s ease; /*
+Smooth transition for focus */
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+border-color: var(--primary-color); /* Highlight border on focus
+*/
+box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Soft focus ring
+*/
+outline: none; /* Remove default browser outline */
+}
+.contact-form textarea {
+resize: vertical; /* Allow vertical resizing only */
+min-height: 120px; /* Minimum height for message box */
+}
+.contact-info p {
+margin-bottom: 15px; /* Space between contact info lines */
+display: flex; /* Use flex for icon and text alignment */
+align-items: center; /* Vertically align icon and text */
+}
+.contact-info p i {
+margin-right: 10px; /* Space between icon and text */
+color: var(--primary-color);
+font-size: 1.2em; /* Slightly larger icons */
+}
+.contact-info a {
+color: var(--primary-color);
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.contact-info a:hover {
+color: var(--accent-color);
+}
+.social-media-links {
+margin-top: 25px; /* Space above social media links */
+display: flex;
+flex-wrap: wrap;
+gap: 20px; /* Space between social media icons/links */
+}
+.social-media-links a {
+font-size: 1.1em;
+display: flex;
+align-items: center;
+color: var(--dark-text-color);
+transition: color 0.3s ease;
+}
+.social-media-links a:hover {
+color: var(--primary-color); /* Change text color on hover */
+}
+.social-media-links a i {
+margin-right: 8px;
+font-size: 1.6em; /* Slightly larger icons */
+color: var(--primary-color);
+transition: color 0.3s ease, transform 0.2s ease; /* Smooth icon
+hover effects */
+}
+.social-media-links a:hover i {
+color: var(--secondary-color);
+transform: translateY(-2px); /* Lift icon slightly on hover */
+}
+/* --- Buttons --- */
+.btn {
+display: inline-block; /* Allows padding and margin, but stays in
+line */
+background-color: var(--primary-color);
+color: var(--light-text-color);
+padding: 12px 25px; /* Generous padding */
+border: none; /* Remove default border */
+border-radius: 5px;
+cursor: pointer; /* Indicates clickable element */
+text-decoration: none; /* Remove underline for links acting as
+buttons */
+font-weight: bold;
+font-size: 1.05em; /* Slightly larger text */
+transition: background-color 0.3s ease, transform 0.2s ease,
+box-shadow 0.2s ease; /* All hover effects */
+}
+.btn:hover {
+background-color: var(--accent-color); /* Change color on hover */
+transform: translateY(-2px); /* Lift button slightly */
+box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow on hover */
+}
+/* --- Footer --- */
+footer {
+background-color: var(--dark-text-color);
+color: var(--light-text-color);
+text-align: center;
+padding: 1.2rem 0; /* More vertical padding */
+margin-top: 40px; /* Space from content above */
+font-size: 0.9em;
+}
+/* --- Back to Top Button --- */
+#backToTopBtn {
+display: none; /* Hidden by default (JavaScript shows it) */
+position: fixed; /* Fixed position relative to viewport */
+bottom: 25px; /* Distance from bottom */
+right: 25px; /* Distance from right */
+z-index: 99; /* Ensure it's above most content */
+border: none;
+outline: none;
+background-color: var(--primary-color);
+color: var(--light-text-color);
+cursor: pointer;
+padding: 12px 18px; /* Padding for button */
+border-radius: 8px; /* Rounded corners */
+font-size: 16px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#backToTopBtn:hover {
+background-color: var(--accent-color);
+transform: translateY(-3px); /* Lift button on hover */
+}
+/* --- Responsive Design (Media Queries) --- */
+/* Tablets and smaller desktops (769px to 992px) */
+@media (max-width: 992px) {
+.container {
+padding: 15px; /* Slightly less padding */
+}
+#hero h1 {
+font-size: 2.5em; /* Adjust font size */
+}
+.project-grid {
+/* Adjust grid to fit more comfortably on tablets */
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.contact-content {
+flex-direction: column; /* Stack contact form and info
+vertically */
+align-items: center; /* Center them */
+}
+.contact-form-container,
+.contact-info {
+width: 100%; /* Take full width when stacked */
+max-width: 500px; /* But limit overall max width for
+readability */
+}
+}
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+body {
+padding-top: 100px; /* More space for stacked header on mobile
+*/
+}
+header {
+flex-direction: column; /* Stack logo and nav vertically */
+align-items: center; /* Center all header content */
+padding: 0.8rem 15px;
+text-align: center; /* Ensure internal text is centered */
+}
+.logo {
+margin-right: 0; /* Remove horizontal margin */
+margin-bottom: 10px; /* Add space below the logo when stacked
+*/
+width: 100%; /* Allows text logo to center within its
+container */
+}
+nav {
+width: 100%; /* Nav takes full width */
+text-align: center; /* Center the nav links */
+}
+nav ul {
+flex-direction: column; /* Stack nav items vertically */
+align-items: center; /* Center stacked nav items */
+margin-top: 10px; /* Space between logo and stacked nav */
+}
+nav ul li {
+margin: 5px 0; /* Vertical spacing between stacked nav items
+*/
+}
+nav ul li a {
+font-size: 0.95em;
+padding: 8px 15px; /* Larger clickable area */
+width: 100%; /* Make link span full width to aid tapping */
+}
+#hero {
+padding: 80px 15px;
+min-height: auto; /* Allow hero to shrink on smaller screens
+*/
+}
+#hero h1 {
+font-size: 2em;
+}
+#hero .bio {
+font-size: 1em;
+}
+.profile-pic {
+width: 120px;
+height: 120px;
+}
+h2 {
+font-size: 1.8em;
+}
+/* Adjust timeline for smaller screens */
+.timeline::before {
+left: 10px;
+}
+.timeline-item {
+padding-left: 25px;
+margin-left: 10px;
+}
+.timeline-item::before {
+left: 5px;
+}
+.skill-item span {
+min-width: 90px;
+font-size: 0.9em;
+}
+.project-grid {
+grid-template-columns: 1fr; /* Stack projects vertically on
+mobile */
+}
+.social-media-links {
+flex-direction: column; /* Stack social links vertically */
+align-items: flex-start; /* Align to the left */
+gap: 10px; /* Smaller gap */
+}
+#backToTopBtn {
+padding: 10px 12px;
+font-size: 16px;
+bottom: 15px;
+right: 15px;
+}
+}
+/* Smaller mobile devices (up to 480px) */
+@media (max-width: 480px) {
+body {
+padding-top: 90px; /* Slightly less padding if header is
+compact */
+}
+header {
+padding: 0.6rem 10px;
+}
+.site-logo {
+height: 35px; /* Slightly smaller logo */
+}
+nav ul li a {
+font-size: 0.9em;
+padding: 6px 12px;
+}
+#hero {
+padding: 60px 10px;
+}
+#hero h1 {
+font-size: 1.7em;
+}
+.profile-pic {
+width: 100px;
+height: 100px;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.btn {
+	font-size: 0.9em;
+	padding: 10px 20px;
+	align-items: center;
+}
+} /* Close @media (max-width: 480px) */

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - RAINALD AVISH CHAND's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Picture2.jpg" alt="Your Name's Logo" class="site-logo">
+                </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projects-showcase" class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project Title One</h3>
+                    <div class="project-image-placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Project+1+Image" alt="Project 1 Screenshot">
+                        </div>
+                    <p class="project-description">A brief description of Project One, highlighting its purpose and key features. This project demonstrates my ability to [specific skill].</p>
+                    <ul class="tools-used">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <a href="#" class="btn project-link">View Project (Optional)</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Project Title Two</h3>
+                    <div class="project-image-placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Project+2+Image" alt="Project 2 Screenshot">
+                    </div>
+                    <p class="project-description">Description of Project Two. Focus on what you learned or achieved. This project involved [specific challenge] and its solution.</p>
+                    <ul class="tools-used">
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>SQLAlchemy</li>
+                    </ul>
+                    <a href="#" class="btn project-link">View Project (Optional)</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Project Title Three</h3>
+                    <div class="project-image-placeholder">
+                        <img src="https://via.placeholder.com/300x200?text=Project+3+Image" alt="Project 3 Screenshot">
+                    </div>
+                    <p class="project-description">Description of Project Three. Explain its functionality and your role in its development. This project showcases my proficiency in [specific technology].</p>
+                    <ul class="tools-used">
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>MongoDB</li>
+                    </ul>
+                    <a href="#" class="btn project-link">View Project (Optional)</a>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 RAINALD AVISH CHAND. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTopBtn" title="Go to top">Top</button>
+
+    <script>
+        // Basic JavaScript for Back to Top Button
+        const backToTopButton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        backToTopButton.addEventListener("click", () => {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    </script>
+</body>
+</html>
